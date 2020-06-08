@@ -13,9 +13,19 @@
 
                 <div class="card-body">
                     <input type="text" name="title" id="title" class="form-control" placeholder="Título do plano"><br>
+                    <% if(title_msg.length > 0) { %>
+                        <div class="alert alert-danger"><%= title_msg %></div>
+                        <br>
+                    <% } %>
                     <input type="number" name="list" id="list" placeholder="N* de listas" class="form-control"><br>
+
+                    <% if(list_msg.length > 0) { %>
+                        <div class="alert alert-danger"><%= list_msg %></div>
+                        <br>
+                    <% } %>
+
                     <input type="number" name="client" id="client" placeholder="N* de clientes" class="form-control"><br>
-                    <input type="number" name="value" id="value" placeholder="Custo" class="form-control"><br>
+                    <input type="number" name="price" id="price" placeholder="Custo" class="form-control"><br>
                     <hr>
                     Permite importação de lista: <input type="checkbox" name="imports" id="imports">
                 </div>

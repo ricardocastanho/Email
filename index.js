@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const plansRouter = require("./routes/PlansRouter")
+const flash = require("connect-flash")
 
 // View engine
 app.set('view engine','ejs');
@@ -12,6 +13,8 @@ app.use(session({
     saveUninitialized: true,
     resave: true
 }))
+
+app.use(flash())
 
 app.use(express.static('public'));
 
@@ -24,6 +27,6 @@ app.use(bodyParser.json());
 app.use("/plan", plansRouter)
 
 // End Router
-app.listen(3000, () => {
+app.listen(54321, () => {
     console.log("O servidor está rodando!")
 })

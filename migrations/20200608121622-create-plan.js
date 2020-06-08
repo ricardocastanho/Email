@@ -23,6 +23,10 @@ module.exports = {
       import: {
         type: Sequelize.BOOLEAN
       },
+      softDeletes: {
+        default: false,
+        type: Sequelize.DATE
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
